@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday DAAA 💜</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#05000d;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-3;
+    background:
+        radial-gradient(circle at 20% 20%, #7c3aed55, transparent 30%),
+        radial-gradient(circle at 80% 30%, #2563eb55, transparent 30%),
+        radial-gradient(circle at 50% 90%, #ec489955, transparent 35%),
+        linear-gradient(135deg,#05000d,#10002b,#050014);
+    animation:bgMove 10s infinite alternate ease-in-out;
+}
+
+@keyframes bgMove{
+    from{filter:hue-rotate(0deg);}
+    to{filter:hue-rotate(25deg);}
+}
+
+/* STARS */
+.star{
+    position:fixed;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    opacity:.7;
+    animation:twinkle 3s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;transform:scale(.7);}
+    to{opacity:1;transform:scale(1.5);}
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.small{
+    color:#d8b4fe;
+    letter-spacing:5px;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(55px,11vw,130px);
+    line-height:.9;
+    background:linear-gradient(90deg,#c084fc,#60a5fa,#f9a8d4);
+    -webkit-background-clip:text;
+    color:transparent;
+    text-shadow:0 0 40px #a855f755;
+}
+
+.hero p{
+    margin:30px auto;
+    max-width:600px;
+    color:#ddd;
+    font-size:18px;
+    line-height:1.7;
+}
+
+.btn{
+    border:1px solid #ffffff33;
+    background:#ffffff12;
+    color:white;
+    padding:14px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+    backdrop-filter:blur(10px);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:#ffffff25;
+    box-shadow:0 0 30px #a855f766;
+}
+
+/* SECTIONS */
+section{
+    padding:100px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.section-title p{
+    color:#aaa;
+}
+
+/* GLASS CARD */
+.card{
+    background:#ffffff0d;
+    border:1px solid #ffffff18;
+    border-radius:25px;
+    padding:30px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 20px 60px #0005;
+}
+
+/* SONG */
+.song-box{
+    max-width:650px;
+    margin:auto;
+    text-align:center;
+}
+
+.music-icon{
+    font-size:65px;
+    margin-bottom:15px;
+    animation:float 2s infinite ease-in-out;
+}
+
+@keyframes float{
+    50%{transform:translateY(-10px);}
+}
+
+.music-controls{
+    margin-top:25px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.music-status{
+    margin-top:20px;
+    color:#c4b5fd;
+}
+
+/* SECRET NOTES */
+.grid{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.note{
+    min-height:180px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transition:.4s;
+}
+
+.note:hover{
+    transform:translateY(-8px) rotate(1deg);
+    box-shadow:0 0 35px #8b5cf655;
+}
+
+.note .hidden{
+    display:none;
+    color:#e9d5ff;
+    line-height:1.6;
+}
+
+.note.open .front{
+    display:none;
+}
+
+.note.open .hidden{
+    display:block;
+}
+
+/* MYSTERY BOX */
+.mystery{
+    text-align:center;
+    max-width:700px;
+    margin:auto;
+}
+
+.box{
+    font-size:100px;
+    cursor:pointer;
+    transition:.5s;
+}
+
+.box:hover{
+    transform:scale(1.15) rotate(5deg);
+}
+
+.surprise{
+    min-height:60px;
+    margin-top:20px;
+    color:#f5d0fe;
+    font-size:20px;
+}
+
+/* STARTER PACK */
+.pack{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.pack-card{
+    text-align:center;
+}
+
+.pack-card .emoji{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+/* SAD SECTION */
+.sad{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+}
+
+.sad-big{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+/* CAKE */
+.cake-area{
+    text-align:center;
+}
+
+.cake{
+    position:relative;
+    width:220px;
+    height:130px;
+    margin:80px auto 30px;
+}
+
+.cake-body{
+    position:absolute;
+    bottom:0;
+    width:220px;
+    height:100px;
+    background:linear-gradient(#c084fc,#7c3aed);
+    border-radius:15px;
+    box-shadow:0 15px 40px #7c3aed66;
+}
+
+.cake-top{
+    position:absolute;
+    top:0;
+    width:220px;
+    height:40px;
+    background:#f9a8d4;
+    border-radius:50%;
+}
+
+.candle{
+    position:absolute;
+    width:15px;
+    height:60px;
+    background:#60a5fa;
+    top:-55px;
+    border-radius:5px;
+}
+
+.candle:nth-child(1){left:45px;}
+.candle:nth-child(2){left:100px;}
+.candle:nth-child(3){left:155px;}
+
+.flame{
+    position:absolute;
+    width:18px;
+    height:25px;
+    background:#fbbf24;
+    border-radius:50% 50% 50% 50%;
+    top:-25px;
+    left:-2px;
+    box-shadow:0 0 20px #fbbf24;
+    animation:flicker .4s infinite alternate;
+}
+
+@keyframes flicker{
+    from{transform:scale(.8);}
+    to{transform:scale(1.1);}
+}
+
+.blown .flame{
+    display:none;
+}
+
+/* QUIZ */
+.quiz{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+}
+
+.question{
+    font-size:23px;
+    margin-bottom:25px;
+}
+
+.options{
+    display:grid;
+    gap:12px;
+}
+
+.option{
+    padding:15px;
+    border-radius:15px;
+    border:1px solid #ffffff18;
+    background:#ffffff0d;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.option:hover{
+    background:#ffffff1c;
+}
+
+/* OPEN WHEN */
+.open-grid{
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.open-card{
+    text-align:center;
+    cursor:pointer;
+    min-height:160px;
+}
+
+.open-message{
+    display:none;
+    margin-top:20px;
+    color:#ddd;
+    line-height:1.6;
+}
+
+.open-card.show .open-message{
+    display:block;
+}
+
+/* TIMELINE */
+.timeline{
+    max-width:800px;
+    margin:auto;
+}
+
+.time-item{
+    margin:25px 0;
+    padding:25px;
+    border-left:3px solid #a855f7;
+    background:#ffffff08;
+    border-radius:0 20px 20px 0;
+}
+
+.time-item span{
+    color:#c084fc;
+    font-size:13px;
+}
+
+/* PASSWORD */
+.password-section{
+    text-align:center;
+}
+
+.password-box{
+    max-width:500px;
+    margin:auto;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    margin:15px 0;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:#ffffff12;
+    color:white;
+    text-align:center;
+}
+
+input::placeholder{
+    color:#aaa;
+}
+
+/* FINAL */
+.final{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+}
+
+.final-content{
+    max-width:850px;
+}
+
+.final h2{
+    font-size:clamp(45px,9vw,100px);
+    background:linear-gradient(90deg,#f9a8d4,#c084fc,#60a5fa);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.final p{
+    color:#ddd;
+    line-height:1.9;
+    font-size:19px;
+    margin:30px auto;
+    max-width:700px;
+}
+
+.heart{
+    font-size:70px;
+    animation:heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat{
+    50%{transform:scale(1.2);}
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    section{
+        padding:75px 5%;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .card{
+        padding:22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- STARS -->
+<div class="star" style="top:10%;left:12%;"></div>
+<div class="star" style="top:20%;left:80%;"></div>
+<div class="star" style="top:35%;left:45%;"></div>
+<div class="star" style="top:55%;left:15%;"></div>
+<div class="star" style="top:70%;left:75%;"></div>
+<div class="star" style="top:85%;left:40%;"></div>
+<div class="star" style="top:45%;left:90%;"></div>
+<div class="star" style="top:8%;left:55%;"></div>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+
+<div class="small">A LITTLE SOMETHING FOR YOU</div>
+
+<h1>HAPPY<br>BIRTHDAY<br>DAAA 💜</h1>
+
+<p>
+Two months might sound like a small amount of time,
+but somehow you've become someone who makes ordinary
+days feel a little more fun, random and special.
+</p>
+
+<button class="btn" onclick="scrollToSection('song')">
+Start the birthday journey ✨
+</button>
+
+</div>
+</section>
+
+
+<!-- SONG -->
+<section id="song">
+
+<div class="section-title">
+<h2>🎧 A Song For You</h2>
+<p>Press play... this one is just for DAAA.</p>
+</div>
+
+<div class="card song-box">
+
+<div class="music-icon">🎵</div>
+
+<h3>Birthday Vibes — DAAA Edition</h3>
+
+<p style="color:#aaa;margin-top:10px;">
+An original little birthday melody made specially for this website.
+</p>
+
+<div class="music-controls">
+
+<button class="btn" onclick="playSong()">
+▶ Play
+</button>
+
+<button class="btn" onclick="pauseSong()">
+⏸ Pause
+</button>
+
+<button class="btn" onclick="restartSong()">
+🔄 Restart
+</button>
+
+</div>
+
+<div class="music-status" id="musicStatus">
+🎧 Ready to play
+</div>
+
+</div>
+</section>
+
+
+<!-- SECRET NOTES -->
+<section>
+
+<div class="section-title">
+<h2>💬 Things I Never Say</h2>
+<p>Tap each card.</p>
+</div>
+
+<div class="grid">
+
+<div class="card note" onclick="this.classList.toggle('open')">
+<div class="front">💜 Tap me</div>
+<div class="hidden">
+You genuinely make things feel lighter when I'm having a bad day.
+</div>
+</div>
+
+<div class="card note" onclick="this.classList.toggle('open')">
+<div class="front">✨ Another one</div>
+<div class="hidden">
+Your random conversations are honestly one of the funniest parts of my day.
+</div>
+</div>
+
+<div class="card note" onclick="this.classList.toggle('open')">
+<div class="front">🫶 One more</div>
+<div class="hidden">
+I'm really glad our paths crossed, DAAA.
+</div>
+</div>
+
+<div class="card note" onclick="this.classList.toggle('open')">
+<div class="front">🤫 Secret</div>
+<div class="hidden">
+You are more important to me than I probably say out loud.
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- MYSTERY -->
+<section>
+
+<div class="section-title">
+<h2>🎁 Mystery Box</h2>
+<p>Click the box until you find your surprise.</p>
+</div>
+
+<div class="card mystery">
+
+<div class="box" onclick="surprise()">
+🎁
+</div>
+
+<div class="surprise" id="surpriseText">
+Tap the mystery box 👀
+</div>
+
+</div>
+</section>
+
+
+<!-- STARTER PACK -->
+<section>
+
+<div class="section-title">
+<h2>😂 DAAA Starter Pack</h2>
+<p>Things that somehow describe you.</p>
+</div>
+
+<div class="pack">
+
+<div class="card pack-card">
+<div class="emoji">😂</div>
+<h3>Random Laughs</h3>
+<p style="color:#aaa;margin-top:10px;">Always ready for chaos.</p>
+</div>
+
+<div class="card pack-card">
+<div class="emoji">🫂</div>
+<h3>Good Friend</h3>
+<p style="color:#aaa;margin-top:10px;">Actually there when needed.</p>
+</div>
+
+<div class="card pack-card">
+<div class="emoji">🤨</div>
+<h3>Random Questions</h3>
+<p style="color:#aaa;margin-top:10px;">Zero warning. Maximum randomness.</p>
+</div>
+
+<div class="card pack-card">
+<div class="emoji">💜</div>
+<h3>Good Vibes</h3>
+<p style="color:#aaa;margin-top:10px;">That's basically the whole point.</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- SAD -->
+<section>
+
+<div class="section-title">
+<h2>🫂 When I'm Sad...</h2>
+</div>
+
+<div class="card sad">
+
+<div class="sad-big">🌧️➡️🌈</div>
+
+<p style="font-size:20px;line-height:1.8;color:#ddd;">
+Sometimes you don't even have to fix anything.
+Just having someone there, talking randomly,
+making me laugh or simply checking on me
+can make a difference.
+</p>
+
+<br>
+
+<p style="color:#c4b5fd;font-size:18px;">
+And you've been that person. 💜
+</p>
+
+</div>
+</section>
+
+
+<!-- CAKE -->
+<section>
+
+<div class="section-title">
+<h2>🎂 Make A Wish</h2>
+<p>Click the button and blow out the candles.</p>
+</div>
+
+<div class="cake-area">
+
+<div class="cake" id="cake">
+
+<div class="cake-body"></div>
+<div class="cake-top"></div>
+
+<div class="candle" style="left:45px;">
+<div class="flame"></div>
+</div>
+
+<div class="candle" style="left:100px;">
+<div class="flame"></div>
+</div>
+
+<div class="candle" style="left:155px;">
+<div class="flame"></div>
+</div>
+
+</div>
+
+<button class="btn" onclick="blowCandles()">
+💨 Blow Candles
+</button>
+
+<p id="cakeText" style="margin-top:20px;color:#c4b5fd;"></p>
+
+</div>
+</section>
+
+
+<!-- QUIZ -->
+<section>
+
+<div class="section-title">
+<h2>🧩 Friendship Quiz</h2>
+<p>Let's see if you know the birthday website creator.</p>
+</div>
+
+<div class="card quiz">
+
+<div class="question" id="question">
+What makes our conversations fun?
+</div>
+
+<div class="options">
+
+<div class="option" onclick="answer(0)">
+A. The random chaos
+</div>
+
+<div class="option" onclick="answer(1)">
+B. The serious meetings
+</div>
+
+<div class="option" onclick="answer(2)">
+C. The homework discussions
+</div>
+
+</div>
+
+<p id="quizResult" style="margin-top:25px;color:#c4b5fd;"></p>
+
+</div>
+</section>
+
+
+<!-- OPEN WHEN -->
+<section>
+
+<div class="section-title">
+<h2>💌 Open When...</h2>
+<p>Little messages for different moments.</p>
+</div>
+
+<div class="open-grid">
+
+<div class="card open-card" onclick="this.classList.toggle('show')">
+
+<h3>😂 Open when you're bored</h3>
+
+<div class="open-message">
+Go find something chaotic to do. And if that fails, text me. 😭
+</div>
+
+</div>
+
+
+<div class="card open-card" onclick="this.classList.toggle('show')">
+
+<h3>🌧️ Open when you're having a bad day</h3>
+
+<div class="open-message">
+Remember that one bad day doesn't define everything. Take a breath and keep going. 🫂
+</div>
+
+</div>
+
+
+<div class="card open-card" onclick="this.classList.toggle('show')">
+
+<h3>😴 Open when you're tired</h3>
+
+<div class="open-message">
+Go resttt. The world can wait for a little while. 😭💜
+</div>
+
+</div>
+
+
+<div class="card open-card" onclick="this.classList.toggle('show')">
+
+<h3>🎂 Open on your birthday</h3>
+
+<div class="open-message">
+Today is your day. Smile a lot, eat something good and enjoy every second. 🎉
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- TIMELINE -->
+<section>
+
+<div class="section-title">
+<h2>🌌 Our Little Timeline</h2>
+<p>Not a long story. Just the beginning.</p>
+</div>
+
+<div class="timeline">
+
+<div class="time-item">
+<span>THE BEGINNING</span>
+<h3>We met.</h3>
+<p style="color:#aaa;margin-top:10px;">
+And somehow a normal conversation became something worth remembering.
+</p>
+</div>
+
+<div class="time-item">
+<span>THEN</span>
+<h3>The random conversations started.</h3>
+<p style="color:#aaa;margin-top:10px;">
+Some serious, some completely pointless, but somehow all fun.
+</p>
+</div>
+
+<div class="time-item">
+<span>NOW</span>
+<h3>You're DAAA.</h3>
+<p style="color:#aaa;margin-top:10px;">
+And that's honestly enough explanation. 😂💜
+</p>
+</div>
+
+<div class="time-item">
+<span>NEXT</span>
+<h3>More memories.</h3>
+<p style="color:#aaa;margin-top:10px;">
+More laughs, more random conversations and more moments to remember.
+</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- PASSWORD -->
+<section class="password-section" id="secret">
+
+<div class="section-title">
+<h2>🔐 One Last Door</h2>
+<p>Only DAAA knows the password.</p>
+</div>
+
+<div class="card password-box">
+
+<input
+type="password"
+id="password"
+placeholder="Enter the secret password..."
+>
+
+<button class="btn" onclick="unlock()">
+🔓 Unlock
+</button>
+
+<p id="passwordMessage" style="margin-top:20px;"></p>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+<section class="final" id="final">
+
+<div class="final-content">
+
+<div class="heart">💜</div>
+
+<h2>HAPPY<br>BIRTHDAY DAAA</h2>
+
+<p>
+Happy Birthday to one of the most unexpectedly important
+people I've met. 💜
+</p>
+
+<p>
+It's crazy how in such a short time, you've become someone
+I can laugh with, talk to, and count on when things aren't
+going great.
+</p>
+
+<p>
+I hope this year gives you a lot of happiness,
+peace, success, random adventures and memories
+you'll never forget.
+</p>
+
+<p>
+Here's to more random conversations,
+more stupid jokes, more laughs,
+and a LOT more memories. 🫂✨
+</p>
+
+<div style="font-size:25px;margin-top:35px;">
+🎂 🎉 🥳 💜 ✨
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+Made with 💜 for DAAA
+</footer>
+
+
+<script>
+
+/* SCROLL */
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+
+/* =========================
+   ORIGINAL BIRTHDAY MELODY
+========================= */
+
+let audioContext;
+let oscillators = [];
+let gainNodes = [];
+let songTimer;
+let playing = false;
+
+const melody = [
+    [261.63,0.35],
+    [329.63,0.35],
+    [392.00,0.35],
+    [329.63,0.35],
+
+    [293.66,0.35],
+    [349.23,0.35],
+    [440.00,0.35],
+    [349.23,0.35],
+
+    [329.63,0.35],
+    [392.00,0.35],
+    [493.88,0.35],
+    [392.00,0.35],
+
+    [261.63,0.5],
+    [329.63,0.5],
+    [392.00,0.7]
+];
+
+function playNote(freq,duration){
+
+    if(!audioContext){
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    oscillator.type="sine";
+    oscillator.frequency.value=freq;
+
+    gain.gain.setValueAtTime(0.0001,audioContext.currentTime);
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.15,
+        audioContext.currentTime+0.03
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.0001,
+        audioContext.currentTime+duration
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime+duration);
+
+    oscillators.push(oscillator);
+    gainNodes.push(gain);
+}
+
+function playSong(){
+
+    if(playing) return;
+
+    playing=true;
+
+    document.getElementById("musicStatus").innerText=
+        "🎵 Playing birthday vibes...";
+
+    let i=0;
+
+    function next(){
+
+        if(!playing) return;
+
+        if(i>=melody.length){
+            i=0;
+        }
+
+        const note=melody[i];
+
+        playNote(note[0],note[1]);
+
+        i++;
+
+        songTimer=setTimeout(next,note[1]*700);
+    }
+
+    next();
+}
+
+function pauseSong(){
+
+    playing=false;
+
+    clearTimeout(songTimer);
+
+    document.getElementById("musicStatus").innerText=
+        "⏸ Paused";
+}
+
+function restartSong(){
+
+    pauseSong();
+
+    setTimeout(()=>{
+        playSong();
+    },100);
+
+}
+
+
+/* MYSTERY BOX */
+
+const surprises=[
+    "You are officially older. Please act responsible now. 😂",
+    "Your birthday mission: smile at least 10 times today.",
+    "Breaking news: DAAA has unlocked another year. 🎉",
+    "Today you are legally allowed to eat extra cake. 🎂",
+    "Plot twist: this website took way too much effort. 😭",
+    "Achievement unlocked: Birthday Legend 🏆",
+    "One more year of being randomly chaotic. 😂"
+];
+
+let surpriseIndex=0;
+
+function surprise(){
+
+    document.getElementById("surpriseText").innerText=
+        surprises[surpriseIndex];
+
+    surpriseIndex++;
+
+    if(surpriseIndex>=surprises.length){
+        surpriseIndex=0;
+    }
+}
+
+
+/* CAKE */
+
+function blowCandles(){
+
+    document.getElementById("cake")
+        .classList.add("blown");
+
+    document.getElementById("cakeText").innerText=
+        "✨ Wish made! Hope it comes true. 💜";
+}
+
+
+/* QUIZ */
+
+function answer(choice){
+
+    const result=document.getElementById("quizResult");
+
+    if(choice===0){
+
+        result.innerText=
+            "CORRECT 😂 Obviously the random chaos!";
+
+    }else{
+
+        result.innerText=
+            "Wronggg 😭 You know the answer is random chaos.";
+    }
+}
+
+
+/* PASSWORD */
+
+function unlock(){
+
+    const password=
+        document.getElementById("password").value;
+
+    const message=
+        document.getElementById("passwordMessage");
+
+    if(password.toUpperCase()==="DAAA"){
+
+        message.innerText=
+            "🔓 Access granted... Welcome DAAA 💜";
+
+        message.style.color="#c084fc";
+
+        setTimeout(()=>{
+
+            document.getElementById("final")
+                .scrollIntoView({
+                    behavior:"smooth"
+                });
+
+        },1000);
+
+    }else{
+
+        message.innerText=
+            "❌ Nopeee... try again 👀";
+
+        message.style.color="#f9a8d4";
+    }
+}
+
+
+/* ENTER KEY FOR PASSWORD */
+
+document.getElementById("password")
+.addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+        unlock();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
